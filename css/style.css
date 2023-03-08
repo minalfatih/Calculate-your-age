@@ -1,0 +1,118 @@
+:root {
+  --main-background: #2a2a72;
+  --bottom-color: #ffa400;
+  --input-color: #cce9ff;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body {
+  background-color: var(--main-background);
+}
+main {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+  position: relative;
+  top: 100px;
+  left: 80px;
+  width: 360px;
+  opacity: 0.1;
+  transform: rotate(320deg);
+  animation-name: up-down;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes up-down {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 200px;
+  }
+}
+section {
+  background-color: #0000004a;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  top: -40px;
+  padding: 20px;
+}
+section h1 {
+  color: var(--input-color);
+  font-size: 40px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+form div:first-child {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+form input {
+  width: 80px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--input-color);
+  color: var(--main-background);
+  font-weight: bold;
+}
+form input:focus {
+  border: 1px dotted var(--bottom-color);
+  outline: none;
+  caret-color: var(--bottom-color);
+}
+form div:last-child {
+  justify-content: center;
+}
+form input[type="submit"] {
+  background-color: var(--bottom-color);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  width: fit-content;
+}
+form input[type="submit"]:hover {
+  cursor: pointer;
+}
+footer {
+  position: relative;
+  top: 255px;
+  font-size: 11px;
+  color: var(--input-color);
+}
+footer span {
+  color: var(--bottom-color);
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  h1 {
+    font-size: 35px;
+  }
+  img {
+    top: 120px;
+    left: 20px;
+    width: 280px;
+  }
+}
